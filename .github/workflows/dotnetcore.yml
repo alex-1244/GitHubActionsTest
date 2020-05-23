@@ -24,5 +24,4 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Build the Docker image
-      uses: actions/checkout@v2
-      run: docker build . --file Dockerfile --tag alextgithubactionstest:$(date +%s)
+      run: docker build ./GitHubActionsTest --file Dockerfile --tag alextgithubactionstest:$(date +%s)
