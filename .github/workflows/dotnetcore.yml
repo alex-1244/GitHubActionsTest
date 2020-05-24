@@ -45,8 +45,8 @@ jobs:
       with:
         resource-group: ${{ secrets.RESOURCE_GROUP }}
         dns-name-label: alexgithubactionstest
-        ports: 80 443
-        restart-policy: OnFailure
+        ports: '80 443'
+        restart-policy: 'OnFailure'
         image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:${{ github.sha }}
         registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
         registry-username: ${{ secrets.REGISTRY_USERNAME }}
