@@ -44,11 +44,11 @@ jobs:
       uses: 'azure/aci-deploy@v1'
       with:
         resource-group: ${{ secrets.RESOURCE_GROUP }}
-        dns-name-label: alexgithubactionstest
+        dns-name-label: alexgithubactionstest${{ github.run_number }}
         ports: '80 443'
         image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:${{ github.sha }}
         registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
         registry-username: ${{ secrets.REGISTRY_USERNAME }}
         registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-        name: githubactionscontainerinstances
+        name: githubactionscontainerinstances${{ github.run_number }}
         location: 'westeurope'
